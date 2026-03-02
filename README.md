@@ -1,13 +1,15 @@
 # Renewable-Powered Hydrogen Electrolyser Optimisation
 
 ## Overview
-This project implements a constrained optimisation framework for scheduling a hydrogen electrolyser powered by variable renewable energy.
-
-The objective is to maximise hydrogen production while respecting operational constraints such as ramp-rate limits and renewable availability. 
+This project develops a constrained optimisation framework for scheduling a hydrogen electrolyser powered by variable renewable energy over a 24-hour horizon with 5-minute resolution. The model maximises hydrogen production while respecting operational constraints including renewable availability, power bounds, and ramp-rate limits.
 
 Two optimisation strategies are implemented:
-- Objective 2: Smoothness-aware optimisation using ramp penalties (λ sensitivity analysis)
-- Objective 3: Cost-aware optimisation under time-varying electricity prices
+
+Objective 2 (Smoothness-aware optimisation): maximises hydrogen production while penalising ramping behaviour through a λ sensitivity analysis.
+
+Objective 3 (Cost-aware optimisation): incorporates a time-varying electricity price signal to minimise cost per unit hydrogen while maintaining operational smoothness.
+
+The framework demonstrates how operational, economic, and physical constraints can be integrated into a structured optimisation-based control strategy.
 
 ## Problem Formulation
 The optimisation problem is solved over a 24-hour horizon with 5-minute resolution.
@@ -18,7 +20,6 @@ Constraints:
 
 Objective 2:
 Maximise hydrogen production while penalising ramping.
-
 Objective 3:
 Minimise electricity cost while rewarding hydrogen production and penalising ramping.
 
